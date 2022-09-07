@@ -56,7 +56,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Analizador Lexico", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Mini analizador sint\u00e1ctico", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Analizar", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Token", None));

@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Analizador Lexico</string>
+   <string>Mini analizador sintáctico</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTextEdit" name="textEdit">
