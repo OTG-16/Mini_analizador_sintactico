@@ -75,7 +75,7 @@ class MainWindow(QMainWindow):
                             token='entero'
                             estado=6 
                             num=1
-                            entrada.append(num)
+                            #entrada.append(num)
                         elif cadena[indice]=='"':
                             lexema+=cadena[indice]
                             estado=11
@@ -85,7 +85,7 @@ class MainWindow(QMainWindow):
                             token='='
                             estado=5  
                             num=18  
-                            entrada.append(num)
+                            #entrada.append(num)
                         elif cadena[indice]=='+' or cadena[indice]=='-':
                             lexema+=cadena[indice]
                             token='opSuma'
@@ -104,61 +104,61 @@ class MainWindow(QMainWindow):
                             token='opRelac'
                             estado=20 
                             num=7 
-                            entrada.append(num)
+                            #entrada.append(num)
                         elif cadena[indice]=='||':
                             lexema+=cadena[indice]
                             token='opOr'
                             estado=20 
                             num=8
-                            entrada.append(num)  
+                            #entrada.append(num)  
                         elif cadena[indice]=='&&':
                             lexema+=cadena[indice]
                             token='opAnd'
                             estado=20 
                             num=9
-                            entrada.append(num)
+                            #entrada.append(num)
                         elif cadena[indice]=='!':
                             lexema+=cadena[indice]
                             token='opNot'
                             estado=10 
                             num=10   
-                            entrada.append(num)
+                            #entrada.append(num)
                         elif cadena[indice]==';':
                             lexema+=cadena[indice]
                             token=';'
                             estado=20 
                             num=12 
-                            entrada.append(num)
+                            #entrada.append(num)
                         elif cadena[indice]==',':
                             lexema+=cadena[indice]
                             token=','
                             estado=20 
                             num=13 
-                            entrada.append(num)
+                            #entrada.append(num)
                         elif cadena[indice]=='(':
                             lexema+=cadena[indice]
                             token='('
                             estado=20 
                             num=14
-                            entrada.append(num) 
+                            #entrada.append(num) 
                         elif cadena[indice]==')':
                             lexema+=cadena[indice]
                             token=')'
                             estado=20 
                             num=15
-                            entrada.append(num)
+                            #entrada.append(num)
                         elif cadena[indice]=='{':
                             lexema+=cadena[indice]
                             token='{'
                             estado=20 
                             num=16
-                            entrada.append(num) 
+                            #entrada.append(num) 
                         elif cadena[indice]=='}':
                             lexema+=cadena[indice]
                             token='}'
                             estado=20 
                             num=17
-                            entrada.append(num)
+                            #entrada.append(num)
                         #Si NO hay un espacio en blanco o alguno de los tokens válidos       
                         else:
                             estado=20 #Se establece el estado como el final
@@ -174,7 +174,7 @@ class MainWindow(QMainWindow):
                             token='identificador' #El token se define como un identificador
                             indice+=1 #Se le suma 1 a la variable indice (se pasa a la siguiente posición)
                             num=0 #La variable num se establece con el número 1
-                            entrada.append(num)
+                            #entrada.append(num)
                         #Si en la posición cadena[indice] NO hay un digito, una letra o un guión bajo
                         else:
                             estado=20 #Se establece el estado como el final
@@ -189,7 +189,7 @@ class MainWindow(QMainWindow):
                             token='opIgualdad' #El token se define como un operador de igualdad
                             indice+=1 #Se le suma 1 a la variable indice (se pasa a la siguiente posición)
                             num=11 #La variable num se establece con el número 11
-                            entrada.append(num)
+                            #entrada.append(num)
                     elif estado==6:
                         if cadena[indice].isdigit():
                             estado=7 
@@ -197,7 +197,7 @@ class MainWindow(QMainWindow):
                             token='entero' 
                             indice+=1 
                             num=1 
-                            entrada.append(num)
+                            #entrada.append(num)
                         if cadena[indice]=='.':
                             estado=7
                             lexema+=cadena[indice]
@@ -211,7 +211,7 @@ class MainWindow(QMainWindow):
                             token='real'
                             indice+=1
                             num=2
-                            entrada.append(num)
+                            #entrada.append(num)
                         if cadena[indice]=='.':
                             estado=8
                             lexema+=cadena[indice]
@@ -225,7 +225,7 @@ class MainWindow(QMainWindow):
                             token='real'
                             indice+=1
                             num=2
-                            entrada.append(num)
+                            #entrada.append(num)
                         else:
                             estado=20
                     elif estado==9:
@@ -235,7 +235,7 @@ class MainWindow(QMainWindow):
                             token='real'
                             indice+=1
                             num=2
-                            entrada.append(num)
+                            #entrada.append(num)
                         else:
                             estado=20
                     elif estado==10:
@@ -247,21 +247,21 @@ class MainWindow(QMainWindow):
                             token='opIgualdad'
                             indice+=1
                             num=11
-                            entrada.append(num)
+                            #entrada.append(num)
                     elif estado==11:
                         if cadena[indice]=='"':
                             estado=20
                             lexema+=cadena[indice]
                             token='cadena'
                             num=3
-                            entrada.append(num)
+                            #entrada.append(num)
                         else:
                             while(indice<=(len(cadena)-1) and cadena[indice]!='"'): 
                                 lexema+=cadena[indice]
                                 token='cadena'
                                 num=3
                                 indice+=1
-                                entrada.append(num)
+                                #entrada.append(num)
                 estado = 0
                 elementos.append({'token':token,'num':num,'lexema':lexema})
 
